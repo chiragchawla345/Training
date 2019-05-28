@@ -1,0 +1,1 @@
+select em.ename from employee em where em.eid in (select distinct e.eid from employee e,certified c,aircraft a where e.eid=c.eid and c.aid=a.aid except (select distinct e.eid from employee e,certified c,aircraft a where e.eid=c.eid and c.aid=a.aid and a.cruising_range<=1000));

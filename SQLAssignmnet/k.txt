@@ -1,0 +1,1 @@
+select e.eid,e.ename,e.salary from employee e where e. eid not in (select em.eid from employee em,certified c where c.eid=em.eid) and e.salary>(select avg(salary) from employee emp,certified cf where cf.eid=emp.eid); 

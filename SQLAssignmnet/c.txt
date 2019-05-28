@@ -1,0 +1,1 @@
+select e.ename from certified c,employee e where c.eid=e.eid and e.salary<(select min(f.price) from flights f where from_='Los Angeles' and to_='Honolulu');

@@ -1,0 +1,1 @@
+select e.eid,max(cruising_range) from aircraft a,certified c,employee e where a.aid=c.aid and c.eid=e.eid and e.eid in (select c.eid from certified c group by c.eid having count(*)>3) group by e.eid;
