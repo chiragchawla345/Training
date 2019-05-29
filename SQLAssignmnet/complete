@@ -32,7 +32,7 @@ h.   Print the enames of pilots who can operate planes with cruisingrange greate
 sol. select e.ename from aircraft a,certified c,employee e where a.cruising_range>3000 and a.aid=c.aid and c.eid=e.eid and a.aname<>'Boeing';
 
 i.   A customer wants to travel from Madison to New York with no more than two changes of flight. List the choice of departure times from Madison if the customer wants to arrive in New York by 6 p.m.
-sol. 
+sol. select departs from flights where arrives<'02-06-2019 18:00:00' and flno in (select flno from flights where from_=any( select distinct to_ from flights where from_='Madison' and to_<>'New York') and to_='New York' union select flno from flights where from_='Madison' and to_='New York');
 
 
 j.   Compute the difference between the average salary of a pilot and the average salary of all employees (including pilots).
