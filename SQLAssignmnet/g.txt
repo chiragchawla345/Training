@@ -1,2 +1,0 @@
-create view maximum as (select e.eid,max(a.cruising_range) from aircraft a,certified c,employee e where a.aid=c.aid and c.eid=e.eid and e.salary>100000 group by e.eid);
-select f.from_,f.to_ from flights f where f.distance<=(select min(max) from maximum);

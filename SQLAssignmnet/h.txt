@@ -1,1 +1,0 @@
-select e.ename from aircraft a,certified c,employee e where a.cruising_range>3000 and a.aid=c.aid and c.eid=e.eid and a.aname<>'Boeing';

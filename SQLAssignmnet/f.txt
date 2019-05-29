@@ -1,1 +1,0 @@
-select a.aid from aircraft a where a.cruising_range>=any(select distance from flights where from_='Los Angeles' and to_='Chicago');

@@ -1,1 +1,0 @@
-select af.aname from aircraft af where af.aid in (select a.aid from aircraft a,certified c,employee e where a.aid=c.aid and c.eid=e.eid and e.salary>80000 group by a.aid having count(*)=(select count(*) from certified ce where ce.aid=a.aid) );
